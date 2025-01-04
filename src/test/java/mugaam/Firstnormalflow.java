@@ -29,13 +29,20 @@ public class Firstnormalflow {
 		// driver.findElement(By.cssSelector("#search-res-containr >
 		// div.col-lg-9.col-md-12.col-sm-12.col-xs-12"));
 
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		
+	
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
 		// note this method if the element is not present use this to check
 
+//		WebElement searchbyLo = wait.until(ExpectedConditions.presenceOfElementLocated(
+//				By.cssSelector("#search-res-containr > div.col-lg-9.col-md-12.col-sm-12.col-xs-12")));
 		WebElement searchbyLo = wait.until(ExpectedConditions.presenceOfElementLocated(
-				By.cssSelector("#search-res-containr > div.col-lg-9.col-md-12.col-sm-12.col-xs-12")));
+				By.cssSelector("#search-res-containr > div.col-lg-9.col-md-12.col-sm-12.col-xs-12 > div.job-list")));
 		
+		
+		System.out.println(searchbyLo + "not found");
 //		if (searchbyLo.isDisplayed()) {
 //			scroll(driver);
 //			scroll(driver);
@@ -78,6 +85,18 @@ public class Firstnormalflow {
 	        System.err.println("Element not found in the new tab.");
 	    }
 	
+		WebElement select = driver.findElement(By.id("chk10-Coimbatore"));
+		
+		select.click();
+		
+		WebElement locationclose = driver.findElement(By.partialLinkText("#FilterCitylo"));
+	    
+	    
+		locationclose.click();
+		
+	    
+	    
+	    
 	}
 
 	public void Selector(WebDriver driver) {
